@@ -113,22 +113,6 @@ export const EditEvent = ({ categories, closeFn, id, event }) => {
             />
           </FormControl>
           <FormControl>
-            {/* <FormLabel>Add a category:</FormLabel>
-            <Stack>
-              <select
-                placeholder="Categories"
-                name="categoryIds"
-                onChange={(e) =>
-                  setEventForm({ ...eventForm, categoryIds: e.target.value })
-                }
-              >
-                {categories.map((category) => (
-                  <option key={category.id} value={category.id}>
-                    {category.name}
-                  </option>
-                ))}
-              </select>
-            </Stack> */}
             <FormLabel>Category:</FormLabel>
             <Stack>
               {categories.map((category) => {
