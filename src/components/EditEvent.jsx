@@ -119,7 +119,7 @@ export const EditEvent = ({ categories, closeFn, id, event }) => {
                 return (
                   <Checkbox
                     colorScheme="orange"
-                    color="brand.600"
+                    color="orange.300"
                     key={category.id}
                     name="categoryIds"
                     value={Array.from(selectedCategories)}
@@ -132,8 +132,7 @@ export const EditEvent = ({ categories, closeFn, id, event }) => {
                       });
                     }}
                     sx={{
-                      borderColor: "brand.300",
-                      backgroundColor: "brand.200",
+                      borderColor: "WhiteAlpha.400",
                       paddingLeft: "5px",
                       borderRadius: "20px",
                     }}

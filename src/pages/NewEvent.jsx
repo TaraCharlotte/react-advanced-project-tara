@@ -132,15 +132,14 @@ export const NewEvent = () => {
                   return (
                     <Checkbox
                       colorScheme="orange"
-                      color="brand.600"
+                      color="orange.300"
                       key={category.id}
                       name="categoryIds"
                       value={Array.from(selectedCategories)}
                       isChecked={selectedCategories.has(category.id)}
                       onChange={() => toggleCategory(category.id)}
                       sx={{
-                        borderColor: "brand.300",
-                        backgroundColor: "brand.200",
+                        borderColor: "WhiteAlpha.400",
                         paddingLeft: "5px",
                         borderRadius: "20px",
                       }}
@@ -160,6 +159,7 @@ export const NewEvent = () => {
                 dateFormat="dd-MM-yyy HH:mm"
                 name="startTime"
                 className="datepicker-input"
+                bgColor="blackAlpha.800"
               />
             </FormControl>
             <FormControl isRequired>
