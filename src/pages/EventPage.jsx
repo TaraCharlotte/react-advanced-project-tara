@@ -81,7 +81,7 @@ export const EventPage = () => {
               height="200px"
             />
           </Box>
-          <Text>{event.description}</Text>
+          <Text fontSize="20px">{event.description}</Text>
           <Text>
             {event.title} starts at: {event.startTime} and ends at:{" "}
             {event.endTime}
