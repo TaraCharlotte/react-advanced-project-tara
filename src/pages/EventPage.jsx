@@ -26,6 +26,8 @@ export const loader = async ({ params }) => {
   };
 };
 
+//test
+
 export const EventPage = () => {
   const { event, categories, users } = useLoaderData();
   const userAuthor = users.find((user) => user.id === event.createdBy);
