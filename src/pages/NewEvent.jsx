@@ -150,7 +150,7 @@ export const NewEvent = () => {
                 })}
               </Stack>
             </FormControl>
-            <FormControl isRequired>
+            <FormControl>
               <FormLabel>When does your event start?</FormLabel>
               <DatePicker
                 showTimeSelect
@@ -161,7 +161,7 @@ export const NewEvent = () => {
                 className="datepicker-input"
               />
             </FormControl>
-            <FormControl isRequired>
+            <FormControl>
               <FormLabel>When does your event end?</FormLabel>
               <DatePicker
                 showTimeSelect
