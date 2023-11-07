@@ -159,7 +159,6 @@ export const NewEvent = () => {
                 dateFormat="dd-MM-yyy HH:mm"
                 name="startTime"
                 className="datepicker-input"
-                bgColor="blackAlpha.800"
               />
             </FormControl>
             <FormControl isRequired>
