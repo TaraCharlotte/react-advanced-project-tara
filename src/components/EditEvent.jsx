@@ -10,12 +10,24 @@ import {
   SimpleGrid,
   FormLabel,
   Stack,
+  Checkbox,
 } from "@chakra-ui/react";
 
 export const EditEvent = ({ categories, closeFn, id, event }) => {
   const [toast, setToast] = useState(null);
   const [eventForm, setEventForm] = useState(event);
   const [fetchState, setFetchState] = useState(null);
+  const [selectedCategories, setSelectedCategories] = useState(new Set());
+
+  const toggleCategory = (categoryId) => {
+    if (selectedCategories.has(categoryId)) {
+      selectedCategories.delete(categoryId);
+    } else {
+      selectedCategories.add(categoryId);
+    }
+    setSelectedCategories(new Set(selectedCategories));
+  };
+
   const eventEdit = async () => {
     const response = await fetch(`http://localhost:3000/events/${id}`, {
       method: "PUT",
@@ -101,7 +113,7 @@ export const EditEvent = ({ categories, closeFn, id, event }) => {
             />
           </FormControl>
           <FormControl>
-            <FormLabel>Add a category:</FormLabel>
+            {/* <FormLabel>Add a category:</FormLabel>
             <Stack>
               <select
                 placeholder="Categories"
@@ -116,6 +128,36 @@ export const EditEvent = ({ categories, closeFn, id, event }) => {
                   </option>
                 ))}
               </select>
+            </Stack> */}
+            <FormLabel>Category:</FormLabel>
+            <Stack>
+              {categories.map((category) => {
+                return (
+                  <Checkbox
+                    colorScheme="orange"
+                    color="brand.600"
+                    key={category.id}
+                    name="categoryIds"
+                    value={Array.from(selectedCategories)}
+                    isChecked={selectedCategories.has(category.id)}
+                    onChange={() => {
+                      toggleCategory(category.id);
+                      setEventForm({
+                        ...eventForm,
+                        categoryIds: Array.from(selectedCategories),
+                      });
+                    }}
+                    sx={{
+                      borderColor: "brand.300",
+                      backgroundColor: "brand.200",
+                      paddingLeft: "5px",
+                      borderRadius: "20px",
+                    }}
+                  >
+                    {category.name}
+                  </Checkbox>
+                );
+              })}
             </Stack>
           </FormControl>
           <FormControl>
